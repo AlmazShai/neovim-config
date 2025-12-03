@@ -21,15 +21,16 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "K", ":m .-2<CR>==", opts)
 keymap("v", "J", ":m .+1<CR>==", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts) 
 
 -- paste preserves primal yanked piece
 keymap("v", "p", '"_dP', opts)
 -- removes highlighting after escaping vim search
 keymap("n", "<Esc>", "<Esc>:noh<CR>", opts)
 
--- switch to normal mode
-keymap("i", "jj", "<Esc>", opts)
+-- adding a new line
+keymap("n", "oo", "o<Esc>k", opts)
+keymap("n", "OO", "O<Esc>j", opts)
 
 -- call vscode commands from neovim
 
