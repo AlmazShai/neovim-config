@@ -20,7 +20,7 @@ require('packer').startup(function(use)
     }
 
     -- surround package
-   use({
+    use({
        "kylechui/nvim-surround",
           tag = "fcfa7e02323d57bfacc3a141f8a74498e1522064", -- Use for stability; omit to use `main` branch for the latest features
           config = function()
@@ -38,17 +38,11 @@ end
 )
 
 -- set clipboard to global clipboard
-vim.opt.clipboard:append("unnamedplus")
+-- vim.opt.clipboard:append("unnamedplus")
 
--- keybindings
-
--- map jk to escape
--- inoremap('jk', '<ESC>')
--- inoremap('JK', '<ESC>')
--- inoremap('jK', '<ESC>')
-
+require "user.generic_keymaps"
 if vim.g.vscode then
    require "user.vscode_keymaps"
 else
-
+    require "user.terminal_keymaps"
 end
